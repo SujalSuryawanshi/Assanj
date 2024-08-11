@@ -17,7 +17,9 @@
         {% endfor %}
     </ul>
 {% endif %}
-
+<a href="{% url 'offers' name=stall.name %}">
+  <button class="btnry">How to use?<span class="ribbons">Important</span></button>
+</a>
 {% if user.is_authenticated %}
 <div class="text-center">
   <p class="text-center">Welcome, {{ user.username }} !</p>
