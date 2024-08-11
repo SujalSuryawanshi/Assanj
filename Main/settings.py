@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,7 +8,7 @@ SECRET_KEY = 'django-insecure-#ui%=r7zuufjfwktbv(#-1)%zgryp!2h*^^u&-q0x9pjpz(jyw
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.5:8000','*']
+ALLOWED_HOSTS = ['192.168.1.5:8000','*','assanj.in']
 
 
 # Application definition
@@ -110,12 +109,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
          'NAME': 'Anotheros',
          'USER': 'Thomas',
-         'PASSWORD': 'sujal12',
-         'HOST': 'localhost',
+         'PASSWORD': 'noHackerhere#wwe14',
+         'HOST': 'database-1.cda6weukikb8.eu-north-1.rds.amazonaws.com',
          'PORT': '5432',
     }
 }
-DATABASES["default"]=dj_database_url.parse("postgresql://truth_final_user:SkLv3KtdgVlxioJEAxg3tcmciKILIsdZ@dpg-cqqup2jqf0us7392inn0-a.oregon-postgres.render.com/truth_final")
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -162,3 +160,15 @@ GOOGLE_MAPS_API_KEY = 'your_api_key'
 # MEDIA
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+AWS_ACCESS_KEY_ID = 'AKIA42PHHYCVEFACWFIT '
+AWS_SECRET_ACCESS_KEY = 'Q7JgvIiQtDWHREj6NBvKXCJnlhfKbyTukOdYIDmI'
+AWS_STORAGE_BUCKET_NAME = 'anotheros'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'Europe (Stockholm) eu-north-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
