@@ -6,10 +6,12 @@
 <br>
 <br>
 <br>
+<br>
 <div class='premium-title'>
     <h7 class="menu-text">{{ offer.message }}</h7>
     <a href="{% url 'detail' name=staller.name %}" class="btn btn-primary">Go back</a>
 </div>
+<br>
 {% for offer in offers %}
 <div class="card">
     <img src="{{ offer.offer_photo.url }}" alt="{{ offer.title }}">
