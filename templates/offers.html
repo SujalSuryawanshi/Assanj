@@ -16,8 +16,8 @@
 <div class="card">
     <img src="{{ offer.offer_photo.url }}" alt="{{ offer.title }}">
     <div class="card-body">
-        <h5 class="card-title">{{ offer.title }}</h5>
-        <p class='desc'>{{offer.message}}</p>
+        <h5 class="desc-heading">{{ offer.title }}</h5>
+        <p class='home-card-text'>{{offer.message}}</p>
         {% if request.user == offer.owner.owner %}
         <a href="{% url 'edit_offer' offer.id %}" class="btn btn-primary">Edit</a>
         <form method="post" action="{% url 'delete_offer' offer.id %}" style="display:inline;">
