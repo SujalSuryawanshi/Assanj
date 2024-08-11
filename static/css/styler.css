@@ -51,7 +51,6 @@ nav .nav-bar{
     width: 100%;
     background-color: var(--nav-color);
     margin: 0 auto;
-    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
