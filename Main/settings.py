@@ -9,6 +9,14 @@ SECRET_KEY = 'django-insecure-#ui%=r7zuufjfwktbv(#-1)%zgryp!2h*^^u&-q0x9pjpz(jyw
 DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.1.5:8000','*','assanj.in']
+CORS_ALLOWED_ORIGINS = [
+    'https://assanj.in',
+    'https://www.assanj.in',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://subdomain.assanj.in',
+    'https://another-domain.com',
+]
 
 
 # Application definition
