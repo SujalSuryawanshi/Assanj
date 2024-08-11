@@ -162,14 +162,11 @@ GOOGLE_MAPS_API_KEY = 'your_api_key'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-CORS_ALLOWED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
     'https://assanj.in',
     'https://www.assanj.in',
 ]
-CSRF_TRUSTED_ORIGINS = [
-    'https://assanj.in',
-]
+
 
 
 AWS_ACCESS_KEY_ID = 'AKIA42PHHYCVEFACWFIT '
