@@ -3,6 +3,9 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from Main import settings
+from django.conf.urls import handler404
+
+handler404 = 'yourapp.views.custom_404'
 
 urlpatterns = [
     path("", include('core.urls')),
