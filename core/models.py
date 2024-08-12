@@ -117,6 +117,7 @@ class New_offer(models.Model):
     title=models.CharField(max_length=100)
     offer_photo = models.ImageField(upload_to='static/images/offer_pics/')
     message=models.CharField(max_length=10000)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
