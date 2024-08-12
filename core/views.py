@@ -415,7 +415,7 @@ def future(request):
 class OfferView(View):
     def get(self, request, name):
         staller = get_object_or_404(Staller, name=name)
-        offers = staller.offers.all()
+        offers = staller.offers.order_by('-last_updated')
         context = {
             'staller': staller,
             'offers': offers,
