@@ -638,7 +638,7 @@ label {
   font-size: 24px;
 }
 .ultimate .package-name::before{
-  content: "Ultimate";
+  content: "Regular";
   font-size: 24px;
 }
 @media (max-width: 1020px) {
