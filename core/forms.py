@@ -50,7 +50,7 @@ class RatingForm(forms.ModelForm):
 class AddItemForm(forms.ModelForm):
     class Meta:
         model = MenuItems
-        fields = ['menu_photo', 'name', 'foo_cat', 'normal_price', 'premium_price']
+        fields = ['menu_photo', 'name', 'foo_cat', 'normal_price', 'premium_price','description']
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
