@@ -360,7 +360,8 @@ def search(request):
         menuitems = MenuItems.objects.filter(
             Q(name__icontains=query) |
             Q(owner__name__icontains=query) |
-            Q(foo_cat__foo_name__icontains=query)
+            Q(foo_cat__foo_name__icontains=query)|
+            Q(description__icontains=query)
         )
         menu_rating_counts = {item.id: item.foo_ratings.count() for item in menuitems}
         stalls_with_follow_count = []
