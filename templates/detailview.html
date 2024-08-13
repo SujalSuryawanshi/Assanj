@@ -92,40 +92,40 @@
   <div class="category">
     <h2 class='item-title'>{{ category.foo_name }}</h2>  <!-- Assuming Foo_Category has a name field -->
     {% for item in items %}
-      <div class="carder">
-        <div class="image">
-            <img src="{{item.menu_photo.url}}" alt="{{ item.name }}">
-        </div>
-        <div class="info">
-          <h5 class="desc-heading">{{item.name}}</h5>
-          <div class='premium-title'>
+ <div class="carder">
+    <div class="image">
+        <img src="{{item.menu_photo.url}}" alt="{{ item.name }}">
+    </div>
+    <div class="info">
+        <h5 class="desc-heading">{{item.name}}</h5>
+        <div class='premium-title'>
             <h7 class="menu-text">Premium->{{item.premium_price}}</h7>
-          </div>
-          <h7 class="menu-text">Regular->{{item.normal_price}}</h7><br>
-          <h7 class="menu-text">{{ item.rating|star_rating }} <br><small>({{ menu_rating_counts|get_item:item.id }} ratings)</small></h7>
-          <div class='desc'>
+        </div>
+        <h7 class="menu-text">Regular->{{item.normal_price}}</h7><br>
+        <h7 class="menu-text">{{ item.rating|star_rating }} <br><small>({{ menu_rating_counts|get_item:item.id }} ratings)</small></h7>
+        <div class='desc'>
             <p>
-              <small>
-                {{item.description}}
-              </small>
+                <small>
+                    {{item.description}}
+                </small>
             </p>
-          </div>
-          {% if user.is_authenticated %}
-          <form method="post" action="{% url 'detail' name=stall.name %}">
+        </div>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'detail' name=stall.name %}">
             {% csrf_token %}
             {{ menu_rating_forms|get_item:item.id|crispy }}
             <button type="submit" name="menu_item_id" value="{{ item.id }}" class='btn btn-info'>Submit</button>
-          </form>
-          {% else %}
-          <br><br><a class="btn btn-primary" href="{% url 'login' %}" class="alert-link">Login to rate</a>
-          {% endif %}
-          {% if user.username|lower == stall.owner.username|lower %}
-            <br>
-            <a href="{% url 'delete_menu_item' item.id %}" class="btn btn-danger">Delete</a>
-            <a href="{% url 'edit_menu_item' item.id %}" class="btn btn-primary">Edit</a>
-          {% endif %}
+        </form>
+        {% else %}
+        <br><br><a class="btn btn-primary" href="{% url 'login' %}" class="alert-link">Login to rate</a>
+        {% endif %}
+        {% if user.username|lower == stall.owner.username|lower %}
+        <br>
+        <a href="{% url 'delete_menu_item' item.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'edit_menu_item' item.id %}" class="btn btn-primary">Edit</a>
+        {% endif %}
         </div>
-      </div>
+    </div>
       <br>
       <br>
     {% endfor %}
