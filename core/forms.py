@@ -34,7 +34,7 @@ class StallerForm(forms.ModelForm):
         model = Staller
         fields = [
            'address', 'category', 'video', 'contact',
-            'timings', 'least_price', 'keywords'
+            'timings', 'keywords'
         ]
 
 
