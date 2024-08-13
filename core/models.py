@@ -35,7 +35,6 @@ class Staller(models.Model):
     contact = models.CharField(max_length=12, default='1234')
     timings = models.CharField(max_length=14)
     rating = models.FloatField(default=0)
-    least_price = models.IntegerField(null=True)
     keywords = models.CharField(max_length=1000, default='spicy', null=True)
 
     def __str__(self):
@@ -75,6 +74,8 @@ class MenuItems(models.Model):
     foo_cat = models.ForeignKey(Foo_Category, on_delete=models.SET_NULL, null=True)
     normal_price = models.IntegerField(default=100)
     premium_price = models.IntegerField(default=100)
+    description=models.CharField(max_length=200, null=True, blank=True)
+    stock=models.IntegerField(null=True,blank=True)
     rating = models.FloatField(default=0)
 
     def __str__(self):
