@@ -224,13 +224,13 @@ def register(request):
         form = SignInForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
-            phone = form.cleaned_data['phone']
+            email=form.cleaned_data['email']
             password = form.cleaned_data['password']
 
             # Create a new CustomUser instance
             user = CustomUser.objects.create(
                 username=username,
-                phone=phone
+                email=email
             )
             user.set_password(password)
             user.save()
@@ -239,6 +239,7 @@ def register(request):
     else:
         form = SignInForm()
     return render(request, 'register/register.html', {'form': form})
+
 
 def login_view(request):
     if request.method == 'POST':
