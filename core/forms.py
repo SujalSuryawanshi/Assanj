@@ -11,7 +11,7 @@ class SignInForm(forms.Form):
     confirm_password = forms.CharField(widget=forms.PasswordInput, required=True)
     class Meta:
         model = CustomUser
-        fields = ['username', 'phone', 'password', 'confirm_password']
+        fields = ['username', 'email', 'password', 'confirm_password']
 
     def clean(self):
         cleaned_data = super().clean()
