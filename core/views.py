@@ -512,3 +512,14 @@ from django.shortcuts import render
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
+
+
+# Reset_Password
+from django.contrib.auth.views import PasswordResetView
+
+class CustomPasswordResetView(PasswordResetView):
+    def get_email_options(self):
+        options = super().get_email_options()
+        # Set your custom domain here
+        options['domain'] = 'https://www.assanj.in/'
+        return options
