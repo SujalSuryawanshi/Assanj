@@ -6,7 +6,7 @@ from users.models import CustomUser
 
 class SignInForm(forms.Form):
     username = forms.CharField(max_length=150, required=True)
-    phone = forms.CharField(max_length=15, required=True)
+    email=forms.CharField(max_length=30,required=True)
     password = forms.CharField(widget=forms.PasswordInput, required=True)
     confirm_password = forms.CharField(widget=forms.PasswordInput, required=True)
     class Meta:
