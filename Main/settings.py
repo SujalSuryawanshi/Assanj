@@ -110,7 +110,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
          'NAME': 'Anotheros',
          'USER': 'Thomas',
-         'PASSWORD': 'noHackerhere#wwe14',
+         'PASSWORD': 'adaRshmmippaanjwwe24',
          'HOST': 'database-1.cda6weukikb8.eu-north-1.rds.amazonaws.com',
          'PORT': '5432',
     }
