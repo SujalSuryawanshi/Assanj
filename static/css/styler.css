@@ -956,3 +956,62 @@ label {
     font-weight:600
   }
 }
+
+
+
+/* Rater */
+
+.reel-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.reel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.reel img.reel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.info {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+}
+
+.star-rating {
+  font-size: 24px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.star-rating .star.selected {
+  color: #ff9800;
+}
+
+.star-rating .star.shine {
+  animation: shine 0.5s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+      text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800, 0 0 40px #ff9800;
+  }
+  100% {
+      text-shadow: none;
+  }
+}
