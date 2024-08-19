@@ -397,7 +397,6 @@ body.dark .search-field i{
 
 .carder {
     display: flex;
-    flex-direction: column;
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     max-width: 800px;
@@ -405,9 +404,7 @@ body.dark .search-field i{
 }
 
 .image {
-    width: 100%;
-    height: 50%; /* Set height to 50% */
-    object-fit: cover;
+    flex: 1;
     background-color: #ffd700;
 }
 
@@ -417,7 +414,7 @@ body.dark .search-field i{
     display: block;
 }
 
-.infoss, .info {
+.info, .infoss {
     flex: 1;
     padding: 20px;
 }
@@ -641,7 +638,7 @@ label {
   font-size: 24px;
 }
 .ultimate .package-name::before{
-  content: "Ultimate";
+  content: "Regularr";
   font-size: 24px;
 }
 @media (max-width: 1020px) {
@@ -958,7 +955,6 @@ label {
 }
 
 
-
 /* Rater */
 
 .reel-container {
@@ -993,8 +989,8 @@ label {
 }
 .rat_content{
   background: rgba(0, 0, 0, 0.5);
-}
 
+}
 .star-rating {
   font-size: 24px;
   color: #ddd;
