@@ -7,30 +7,37 @@
 <div class="reel-container">
     {% for rater in raters %}
     <div class="reel" id="rater-{{ rater.id }}">
-        <div class="info">
-            <h2>{{ rater.name }}</h2>
-            <p>Price: {{ rater.price }}</p>
-            <p>{{ rater.description }}</p>
-            <a href="{{ rater.aff_link }}" target="_blank">Buy Now</a>
+        <div class="infoss">
+            <div class='rat_content'>
+                <h2>{{ rater.name }}</h2>
+                <p>Price: {{ rater.price }}</p>
+                <p>{{ rater.description }}</p>
+                <a href="{{ rater.aff_link }}" target="_blank">Buy Now</a>
+                <p id="likes-{{ rater.id }}">Likes: {{ rater.total_likes }}({{ rater.number_of_likes }} people)</p>
+                <p id="rating-{{ rater.id }}">Average Rating: {{ rater.average_rating|floatformat:2 }}({{ rater.number_of_reviews }} people)</p>
 
-            <!-- Like Button -->
-            <p id="likes-{{ rater.id }}">Likes: {{ rater.total_likes }}</p>
-            <button onclick="likeRater({{ rater.id }})" class="btn btn-outline-primary">
-                {% if user in rater.likes.all %}
-                    Unlike
-                {% else %}
-                    Like
-                {% endif %}
-            </button>
+                <!-- Like Button -->
+                <button onclick="likeRater({{ rater.id }})" class="btn btn-outline-primary">
+                    {% if user in rater.likes.all %}
+                        Unlike
+                    {% else %}
+                        Like
+                    {% endif %}
+                </button>
 
-            <!-- Star Rating -->
-            <p id="rating-{{ rater.id }}">Average Rating: {{ rater.average_rating|floatformat:2 }}({{ rater.number_of_reviews }} reviews)</p>
-            <div class="star-rating" id="star-rating-{{ rater.id }}">
-                {% for i in "12345" %}
-                <span class="star" data-value="{{ forloop.counter }}" onclick="rateRater({{ rater.id }}, {{ forloop.counter }})">
-                    &#9733;
-                </span>
-                {% endfor %}
+                <!-- Star Rating -->
+                <div class="star-rating" id="star-rating-{{ rater.id }}">
+                    {% for i in "12345" %}
+                    <span class="star" data-value="{{ forloop.counter }}" onclick="rateRater({{ rater.id }}, {{ forloop.counter }})">
+                        &#9733;
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <img src="{{ rater.img_link }}" alt="{{ rater.name }}" class="reel-item">
+    </div>
+    {% endfor %}
             </div>
         </div>
         <img src="{{ rater.img_link }}" alt="{{ rater.name }}" class="reel-item">
