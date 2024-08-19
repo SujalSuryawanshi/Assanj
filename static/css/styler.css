@@ -417,7 +417,7 @@ body.dark .search-field i{
     display: block;
 }
 
-.infoss {
+.infoss, .info {
     flex: 1;
     padding: 20px;
 }
