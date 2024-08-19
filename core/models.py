@@ -142,6 +142,9 @@ class Rater(models.Model):
         ratings = self.review_set.all()
         return sum(review.rating for review in ratings) / len(ratings) if ratings else 0
 
+    def __str__(self):
+        return self.name
+
 class Review(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     rater = models.ForeignKey(Rater, on_delete=models.CASCADE)
