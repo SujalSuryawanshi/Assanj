@@ -417,7 +417,7 @@ body.dark .search-field i{
     display: block;
 }
 
-.info {
+.infoss {
     flex: 1;
     padding: 20px;
 }
@@ -986,11 +986,13 @@ label {
   z-index: -1;
 }
 
-.info {
+.infoss {
   position: relative;
-  background: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 20px;
+}
+.rat_content{
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .star-rating {
