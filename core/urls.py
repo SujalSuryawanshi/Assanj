@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from .views import Home,login_view, logout_view,send_friend_request, accept_friend_request, delete_friend_request,ListView,FollowStallerView,UnfollowStallerView,register,cat_view
-from .views import EditPost,add_menu_item, delete_menu_item, edit_menu_item,future,add_foo_category,OfferView, NewOfferView, EditOfferView, delete_offer
+from .views import EditPost,add_menu_item, delete_menu_item, edit_menu_item,future,add_foo_category,OfferView, NewOfferView, EditOfferView, delete_offer, like_rater, review_rater, rater_list
 from . import views
 urlpatterns = [
     path("",Home.as_view(), name='home' ),
@@ -28,6 +28,9 @@ urlpatterns = [
     path('stall/<slug:staller_name>/new_offer/', NewOfferView.as_view(), name='new_offer'),
     path('offer/<int:offer_id>/edit/', EditOfferView.as_view(), name='edit_offer'),
     path('offer/<int:offer_id>/delete/', delete_offer, name='delete_offer'),
-    path("category/<str:foo>/", views.cat_view, name="category")
+    path("category/<str:foo>/", views.cat_view, name="category"),
+    path('rater/', views.rater_list, name='rater_list'),
+    path('like/<int:rater_id>/', views.like_rater, name='like_rater'),
+    path('review/<int:rater_id>/', views.review_rater, name='review_rater'),
 
     ]
