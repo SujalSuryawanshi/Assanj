@@ -144,6 +144,8 @@ class Rater(models.Model):
 
     def __str__(self):
         return self.name
+    def number_of_reviews(self):
+        return self.review_set.count()
 
 class Review(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
