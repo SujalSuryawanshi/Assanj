@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, DeleteView, UpdateView, View, ListView, DetailView
-from .models import Category, Staller, MenuItems, Following, Rating, FooRating,Foo_Category,New_offer
+from .models import Category, Staller, MenuItems, Following, Rating, FooRating,Foo_Category,New_offer, Rater, Review
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from users.models import CustomUser, FriendRequest
@@ -524,3 +524,34 @@ class CustomPasswordResetView(PasswordResetView):
         # Set your custom domain here
         options['domain'] = 'https://www.assanj.in/'
         return options
+
+
+from django.http import JsonResponse
+# Rater
+
+@login_required
+def like_rater(request, rater_id):
+    rater = get_object_or_404(Rater, id=rater_id)
+    if request.user in rater.likes.all():
+        rater.likes.remove(request.user)
+        liked = False
+    else:
+        rater.likes.add(request.user)
+        liked = True
+
+    return JsonResponse({'total_likes': rater.total_likes(), 'liked': liked})
+
+@login_required
+def review_rater(request, rater_id):
+    rater = get_object_or_404(Rater, id=rater_id)
+    rating = int(request.POST.get('rating', 0))
+    review, created = Review.objects.get_or_create(user=request.user, rater=rater)
+    review.rating = rating
+    review.save()
+
+    return JsonResponse({'average_rating': rater.average_rating(), 'user_rating': review.rating})
+
+@login_required
+def rater_list(request):
+    raters = Rater.objects.all()
+    return render(request, 'rater_list.html', {'raters': raters})
