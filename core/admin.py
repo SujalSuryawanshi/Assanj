@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Staller, MenuItems, Category,Subcat, Egit, Following, Rating, Foo_Category, New_offer
+from .models import Staller, MenuItems, Category,Subcat, Egit, Following, Rating, Foo_Category, New_offer, Rater
 from embed_video.admin import AdminVideoMixin
 
 class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
@@ -20,3 +20,4 @@ admin.site.register(Following)
 admin.site.register(Rating)
 admin.site.register(Foo_Category)
 admin.site.register(New_offer)
+admin.site.register(Rater)
