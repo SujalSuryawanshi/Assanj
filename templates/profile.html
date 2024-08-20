@@ -32,10 +32,10 @@
 </h3>
 <br>
 <br>
+<a href={% url "edit_profile" %} class='btn btn-success'>Edit Profile</a>
 
 <h4 class="anton-regular">Search Users</h4>
 <br>
-<a href={% url "edit_profile" %} class='btn btn-success'>Edit Profile</a>
 <form method="get" class="anton-regular" action="{% url 'search_users' %}">
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Search</button>
