@@ -99,7 +99,7 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your profile was successfully updated!')
-            return redirect('profile')  # Redirect to the profile page or wherever you want
+            return redirect('profile', username=request.user.username)  # Redirect to the profile page or wherever you want
     else:
         form = CustomUserEditForm(instance=request.user)
 
