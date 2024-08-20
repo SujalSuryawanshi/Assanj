@@ -4,6 +4,13 @@ from django import forms
 from rest_framework import serializers
 from users.models import CustomUser
 
+
+
+class CustomUserEditForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'first_name', 'last_name']  # Add other fields if needed
+
 class SignInForm(forms.Form):
     username = forms.CharField(max_length=150, required=True)
     email=forms.CharField(max_length=30,required=True)
