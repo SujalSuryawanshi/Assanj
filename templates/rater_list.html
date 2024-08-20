@@ -12,12 +12,12 @@
                 <h2>{{ rater.name }}</h2>
                 <p>Price: {{ rater.price }}</p>
                 <p>{{ rater.description }}</p>
-                <a href="{{ rater.aff_link }}" target="_blank">Buy Now</a>
+                <a href="{{ rater.aff_link }}" target="_blank" class="btn btn-primary">Buy Now</a>
                 <p id="likes-{{ rater.id }}">Likes: {{ rater.total_likes }}({{ rater.number_of_likes }} people)</p>
                 <p id="rating-{{ rater.id }}">Average Rating: {{ rater.average_rating|floatformat:2 }}({{ rater.number_of_reviews }} people)</p>
 
                 <!-- Like Button -->
-                <button onclick="likeRater({{ rater.id }})" class="btn btn-outline-primary">
+                <button onclick="likeRater({{ rater.id }})" class="btn btn-primary">
                     {% if user in rater.likes.all %}
                         Unlike
                     {% else %}
