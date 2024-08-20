@@ -89,6 +89,23 @@ def edit_menu_item(request, item_id):
 
     return render(request, 'edititem.html', {'form': form, 'menu_item': menu_item})
 
+####____USER
+from .forms import CustomUserEditForm
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        form = CustomUserEditForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile was successfully updated!')
+            return redirect('profile')  # Redirect to the profile page or wherever you want
+    else:
+        form = CustomUserEditForm(instance=request.user)
+
+    return render(request, 'edit_user.html', {'form': form}) 
+
+
 ### Add-In-Views ####
 
 ###MENU-ITEM###
