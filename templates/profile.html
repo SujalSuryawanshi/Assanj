@@ -32,8 +32,11 @@
 </h3>
 <br>
 <br>
-<a href={% url "edit_profile" %} class='btn btn-success'>Edit Profile</a>
-
+<div class='menu-title'>
+    <a href={% url "edit_profile" %} class='btn btn-success'>Edit Profile</a>
+</div>
+<br>
+<br>
 <h4 class="anton-regular">Search Users</h4>
 <br>
 <form method="get" class="anton-regular" action="{% url 'search_users' %}">
