@@ -1027,3 +1027,33 @@ label {
 .space{
   height: 13%;
 }
+
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.messages .success {
+    background-color: #4CAF50; /* Green */
+}
+
+.messages .error {
+    background-color: #f44336; /* Red */
+}
+
+.messages .warning {
+    background-color: #ff9800; /* Orange */
+}
+
+.messages .info {
+    background-color: #2196F3; /* Blue */
+}
