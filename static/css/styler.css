@@ -1013,3 +1013,17 @@ label {
       text-shadow: none;
   }
 }
+
+
+.user-anton-regular{
+  color: var(--menu);
+  text-align: center;
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.space{
+  height: 13%;
+}
