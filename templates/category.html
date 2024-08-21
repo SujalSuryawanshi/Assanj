@@ -15,7 +15,6 @@
 <div class='description'>
 <form method="get" action="" class="form-inline my-2 my-lg-0">
   <div class="form-group">
-      <label for="sort_by" class="mr-2">Sort by:</label>
       <select name="sort_by" id="sort_by" onchange="this.form.submit()" class="form-control">
           <option value="">Select</option>
           <option value="ratings_high_to_low" {% if sort_by == 'ratings_high_to_low' %}selected{% endif %}>Ratings High to Low</option>
