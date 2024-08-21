@@ -57,3 +57,31 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+
+
+
+// Rater 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const reels = document.querySelectorAll('.reel');
+
+  reels.forEach((reel, index) => {
+      reel.addEventListener('touchstart', (e) => {
+          startY = e.touches[0].clientY;
+      });
+
+      reel.addEventListener('touchend', (e) => {
+          const endY = e.changedTouches[0].clientY;
+          const deltaY = startY - endY;
+
+          if (deltaY > 50 && index < reels.length - 1) {
+              reels[index + 1].scrollIntoView({ behavior: 'smooth' });
+          } else if (deltaY < -50 && index > 0) {
+              reels[index - 1].scrollIntoView({ behavior: 'smooth' });
+          }
+      });
+  });
+});
+
