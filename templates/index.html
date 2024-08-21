@@ -22,22 +22,7 @@
 </a>
 </div>
 <br>
-{% if user.is_authenticated %}
-<div class="text-center">
-  <p class="text-center">Welcome, {{ user.username }} !</p>
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary">Logout</button>
-  </form>
-</div>
-<br>
-<br>
-{% else %}
-<p class="text-center">
-  <a href="{% url 'login' %}" class="alert-link" >Login</a><br>
-  <a href="{% url 'signin' %}" class="alert-link" >Register</a>
-</p>
-{% endif %}
+
 <div class='description'>
 {% for cats in cat %}  
 <a href="{% url "category" cats.cat_name %}">
