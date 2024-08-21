@@ -570,5 +570,23 @@ def review_rater(request, rater_id):
 
 @login_required
 def rater_list(request):
-    raters = Rater.objects.all()
-    return render(request, 'rater_list.html', {'raters': raters})
+    sort_by = request.GET.get('sort_by', 'likes')  # Default sort by likes
+    if sort_by == 'likes':
+        raters = Rater.objects.annotate(
+            like_count=Count('likes'),
+            avg_rating=Avg('review__rating')
+        ).order_by('-like_count', '-avg_rating')
+    elif sort_by == 'ratings':
+        raters = Rater.objects.annotate(
+            like_count=Count('likes'),
+            avg_rating=Avg('review__rating')
+        ).order_by('-avg_rating', '-like_count')
+
+    context = {
+        'raters': raters,
+        'sort_by': sort_by
+    }
+    return render(request, 'rater_list.html', context)
+
+
+
