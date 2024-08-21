@@ -35,6 +35,12 @@
 <div class='menu-title'>
     <a href={% url "edit_profile" %} class='btn btn-success'>Edit Profile</a>
 </div>
+<div class="text-center">
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-outline-primary">Logout</button>
+  </form>
+</div>
 <br>
 <br>
 <h4 class="anton-regular">Search Users</h4>
