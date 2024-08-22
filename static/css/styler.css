@@ -414,9 +414,10 @@ body.dark .search-field i{
     display: block;
 }
 
-.info, .infoss {
+.info, .infosys {
     flex: 1;
     padding: 20px;
+    background-color: #000000;
 }
 
 
@@ -981,7 +982,7 @@ label {
   object-fit: cover;
 }
 
-.info {
+.infosys {
   width: 100%;
   color: #fff;
   padding: 10px;
