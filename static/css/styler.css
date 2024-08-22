@@ -297,7 +297,7 @@ body.dark .search-field i{
 
 .card-body{
     height: 30%;
-    background-color: #d2d2d2;
+    background-color: #000000;
 }
 .Menu-title,.text-center, .messages{
     color: var(--menu);
@@ -335,7 +335,7 @@ body.dark .search-field i{
   font-family: "Playfair Display", serif;
   text-align: left;
   font-size:35px ;
-  color: var(--menu);
+  color: white;
 }
 .desc{
   text-align: left;
@@ -352,6 +352,7 @@ body.dark .search-field i{
 .card-text, .menu-text{
     font-size: 20px;
     font-weight: 500;
+    color: white;
 }
 .home-card-text{
     font-size: 20px;
@@ -359,6 +360,7 @@ body.dark .search-field i{
 }
 .carder,.card-body,.info,.card,.carousel-inner,.carousel-item active{
     background-color: #ffd700;  
+    border: 2px solid white;
 }
 
 /* Card */
@@ -405,7 +407,8 @@ body.dark .search-field i{
 
 .image {
     flex: 1;
-    background-color: #ffd700;
+    background-color: #000000;
+    border: 2px solid white;
 }
 
 .image img {
@@ -427,6 +430,7 @@ label {
 }
 .stall-rating{
     font-size: 24px;
+    color: white;
 }
 
 
