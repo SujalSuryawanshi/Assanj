@@ -359,7 +359,7 @@ body.dark .search-field i{
     color: #000000;
 }
 .carder,.card-body,.info,.card,.carousel-inner,.carousel-item active{
-    background-color: #ffd700;  
+    background-color: black;  
     border: 2px solid white;
 }
 
