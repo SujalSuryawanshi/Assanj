@@ -356,7 +356,7 @@ body.dark .search-field i{
 }
 .home-card-text{
     font-size: 20px;
-    color: #000000;
+    color: white;
 }
 .carder,.card-body,.info,.card,.carousel-inner,.carousel-item active{
     background-color: black;  
