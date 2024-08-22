@@ -11,7 +11,7 @@
 <div class="reel-container">
     {% for rater in raters %}
     <div class="reel" id="rater-{{ rater.id }}">
-        <img src="{{ rater.img_link }}" alt="{{ rater.name }}">
+        <img src="{{ rater.img_link }}" alt="{{ rater.name }}" class="reel-item">
         <div class="infosys">
             <h2 class="anton-regular">{{ rater.name }}</h2>
             <p>Price: {{ rater.price }}</p>
