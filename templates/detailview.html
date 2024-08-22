@@ -80,7 +80,7 @@
     </div>
   </div>
   
-  <h1 class="item-title">Items<br></h1>
+  <h1 class="anton-regular">Items<br></h1>
     {% if user.is_authenticated %}
       {% if user.username|lower == stall.owner.username|lower %}
       <h1 class="item-title"> <a href="{% url 'add_menu_item' stall.id %}">Add Item</a></h1>
@@ -90,7 +90,7 @@
 
   {% for category, items in menu_items_by_category.items %}
   <div class="category">
-    <h2 class='item-title'>{{ category.foo_name }}</h2>  <!-- Assuming Foo_Category has a name field -->
+    <h2 class='anton-regular'>{{ category.foo_name }}</h2>  <!-- Assuming Foo_Category has a name field -->
     {% for item in items %}
  <div class="carder">
     <div class="image">
