@@ -989,11 +989,11 @@ label {
   text-align: left;
 }
 
-.info h2, .info p {
+.infosys h2, .infosys p {
   margin: 5px 0;
 }
 
-.info a {
+.infosys a {
   color: #00f;
   text-decoration: underline;
 }
