@@ -417,9 +417,10 @@ body.dark .search-field i{
 .info, .infosys {
     flex: 1;
     padding: 20px;
-    background-color: #000000;
 }
-
+.infosys{
+    background-color: #000000   
+}
 
 label {
     margin-bottom: 5px;
@@ -991,6 +992,7 @@ label {
 
 .infosys h2, .infosys p {
   margin: 5px 0;
+  color: white;
 }
 
 .infosys a {
