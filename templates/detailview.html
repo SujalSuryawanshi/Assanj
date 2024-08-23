@@ -44,25 +44,25 @@
       <p class="card-text">Followers: {{follow_count}}</p>
       <p class='stall-rating'>{{ stall.rating|star_rating }} ({{ staller_rating_count }} ratings)</p>      
       {% if user.is_authenticated %}
-      <h3>Rate this Staller</h3>
+      <h3 class='card-text'>Rate this Staller</h3>
           {% if form %}
-          <form method="post" action="{% url 'detail' name=stall.name %}">
+          <form method="post" action="{% url 'detail' name=stall.name %}" class='card-text'>
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class='btn btn-info'>Submit Rating</button>
-        </form>        
+         </form>        
           {% else %}
-            <p>You need to be logged in to rate this staller.</p>
+            <p class='card-text'>You need to be logged in to rate this staller.</p>
           {% endif %}
 
       {% if is_following %}
       You are following this staller.
-      <form method="post" action="{% url 'unfollow_staller' stall.name %}">
+      <form method="post" action="{% url 'unfollow_staller' stall.name %}" class='card-text'>
         {% csrf_token %}
         <button type="submit" class="btn btn-primary">Unfollow</button>
       </form>
       {% else %}
-      You are not following this staller.
+      <p class='card-text'>You are not following this staller.</p>
       <form method="post" action="{% url 'follow_staller' stall.name %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-primary">Follow</button>
@@ -97,9 +97,10 @@
         <img src="{{item.menu_photo.url}}" alt="{{ item.name }}">
     </div>
     <div class="info">
+        <h5 class='anton-regular'>{{ item.name }}</h5>
         <h7 class="menu-text">Price : {{item.normal_price}}</h7><br>
         <h7 class="menu-text">{{ item.rating|star_rating }} <br><small>({{ menu_rating_counts|get_item:item.id }} ratings)</small></h7>
-        <div class='desc'>
+        <div class='card-text'>
             <p>
                 <small>
                     {{item.description}}
