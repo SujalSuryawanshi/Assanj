@@ -38,7 +38,7 @@
 <div class="card mb-3">
   {% video stall.video '100% x 200%' %}
   <div class="card-body">
-      <h3 class='card-title'>{{stall.name}}</h3>
+      <h1 class='user-anton-regular'>{{stall.name}}</h1>
       <p class="card-text">Address: {{stall.address}}</p>
       <p class="card-text">Timings: {{stall.timings}}</p>
       <p class="card-text">Followers: {{follow_count}}</p>
@@ -97,7 +97,7 @@
         <img src="{{item.menu_photo.url}}" alt="{{ item.name }}">
     </div>
     <div class="info">
-        <h5 class='anton-regular'>{{ item.name }}</h5>
+        <h5 class='user-anton-regular'>{{ item.name }}</h5>
         <h7 class="menu-text">Price : {{item.normal_price}}</h7><br>
         <h7 class="menu-text">{{ item.rating|star_rating }} <br><small>({{ menu_rating_counts|get_item:item.id }} ratings)</small></h7>
         <div class='card-text'>
