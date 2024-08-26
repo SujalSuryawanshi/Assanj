@@ -19,6 +19,7 @@
             <a href="{{ rater.aff_link }}" target="_blank" class='btn btn-outline-primary'>Buy Now</a>
             <p id="rating-{{ rater.id }}">Reviews: {{ rater.average_rating|floatformat:1 }}({{ rater.number_of_reviews }} Reviews)</p>          
             <!-- Five-Star Rating -->
+            <p>What stars do you think I could be?🤔</p>
             <div class="star-rating" id="star-rating-{{ rater.id }}">
                 {% for i in "12345" %}
                 <span class="star" data-value="{{ forloop.counter }}" onclick="rateRater({{ rater.id }}, {{ forloop.counter }})">
