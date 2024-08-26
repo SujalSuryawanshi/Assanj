@@ -17,17 +17,7 @@
             <p>Price: {{ rater.price }}</p>
             <p>{{ rater.description }}</p>
             <a href="{{ rater.aff_link }}" target="_blank" class='btn btn-outline-primary'>Buy Now</a>
-            <p id="likes-{{ rater.id }}">Likes: {{ rater.total_likes }}</p>
-            <p id="rating-{{ rater.id }}">Rating: {{ rater.average_rating|floatformat:1 }}({{ rater.number_of_reviews }} people)</p>
-
-            <!-- Like Form -->
-            <button onclick="likeRater({{ rater.id }})" class='btn btn-outline-primary'>
-                {% if user in rater.likes.all %}
-                    Unlike
-                {% else %}
-                    Like
-                {% endif %}
-            </button>
+            <p id="rating-{{ rater.id }}">Reviews: {{ rater.average_rating|floatformat:1 }}({{ rater.number_of_reviews }} Reviews)</p>          
             <!-- Five-Star Rating -->
             <div class="star-rating" id="star-rating-{{ rater.id }}">
                 {% for i in "12345" %}
