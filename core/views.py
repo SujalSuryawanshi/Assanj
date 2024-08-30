@@ -546,7 +546,7 @@ class CustomPasswordResetView(PasswordResetView):
 from django.http import JsonResponse
 # Rater
 
-@login_required
+
 def like_rater(request, rater_id):
     rater = get_object_or_404(Rater, id=rater_id)
     if request.user in rater.likes.all():
@@ -558,7 +558,7 @@ def like_rater(request, rater_id):
 
     return JsonResponse({'total_likes': rater.total_likes(), 'liked': liked})
 
-@login_required
+
 def review_rater(request, rater_id):
     rater = get_object_or_404(Rater, id=rater_id)
     rating = int(request.POST.get('rating', 0))
@@ -568,7 +568,7 @@ def review_rater(request, rater_id):
 
     return JsonResponse({'average_rating': rater.average_rating(), 'user_rating': review.rating})
 
-@login_required
+
 def rater_list(request):
     sort_by = request.GET.get('sort_by', 'likes')  # Default sort by likes
     if sort_by == 'likes':
