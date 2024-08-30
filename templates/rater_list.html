@@ -20,13 +20,17 @@
             <p id="rating-{{ rater.id }}">Reviews: {{ rater.average_rating|floatformat:1 }}({{ rater.number_of_reviews }} Reviews)</p>          
             <!-- Five-Star Rating -->
             <p>What stars do you think I could be?🤔</p>
-            <div class="star-rating" id="star-rating-{{ rater.id }}">
-                {% for i in "12345" %}
-                <span class="star" data-value="{{ forloop.counter }}" onclick="rateRater({{ rater.id }}, {{ forloop.counter }})">
-                    &#9733;
-                </span>
-                {% endfor %}
-            </div>
+            {% if user.is_authenticated %}
+                <div class="star-rating" id="star-rating-{{ rater.id }}">
+                    {% for i in "12345" %}
+                    <span class="star" data-value="{{ forloop.counter }}" onclick="rateRater({{ rater.id }}, {{ forloop.counter }})">
+                        &#9733;
+                    </span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <a class="btn btn-outline-primary" href="{% url 'login' %}">Login to review</a>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
@@ -65,7 +69,7 @@
         .then(response => response.json())
         .then(data => {
             if (data.average_rating) {
-                document.getElementById(`rating-${raterId}`).innerText = `Average Rating: ${data.average_rating}`;
+                document.getElementById(`rating-${raterId}`).innerText = `Rating: ${data.average_rating}`;
             }
             // Highlight the correct number of stars
             const stars = document.querySelectorAll(`#star-rating-${raterId} .star`);
